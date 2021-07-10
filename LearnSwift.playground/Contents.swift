@@ -158,5 +158,95 @@ print(greetingWords.hasPrefix("Hello"))
 print(greetingWords.hasSuffix("!"))
 
 
-//合并空值运算符
+// a??b 等价于三元远算 (a != nil ? a!: b)
+func addTwoNum(num1: Int?, num2: Int?) -> Int {
+    return (num1 ?? 0) + (num2 ?? 0)
+}
 
+let sum: Int = addTwoNum(num1: 3, num2: 2)
+
+//a...b 等价于[a, b]
+for idx in 1...5 {
+    print("\(idx) * 5 = \(Int(idx * 5))")
+}
+
+//a..<b 等价于[a, b)
+let namesArray = ["zhangsan", "lisi", "wangwu", "zhaoliu"]
+let cnt = namesArray.count
+for i in 0..<cnt {
+    print(namesArray[i])
+}
+
+//单侧区间
+for name in namesArray[2...] {
+    print(name)
+}
+
+for name in namesArray[...2] {
+    print(name)
+}
+
+let rangeInt = ...5
+rangeInt.contains(7)
+rangeInt.contains(4)
+rangeInt.contains(-1)
+
+//数组
+for name in namesArray {
+    print(name)
+}
+
+//字典
+let dict = ["spider": 8, "ant": 6, "cat": 4]
+for (k, v) in dict {
+    print("key = \(k), value = \(v)")
+    print(String(format: "key = %@, value = %d", k, v))
+}
+
+//_忽略临时变量名
+let base = 3, power = 5
+var answer = 1
+for _ in 1...power {
+    answer *= base
+}
+print(answer)
+
+//分段区间
+//stride(from:to:by:) 开区间
+let minInterval = 5
+for mark in stride(from: 0, to: 50, by: minInterval) {
+    print(mark)
+}
+//stride(from:through:by:) 闭区间
+for mark in stride(from: 0, through: 50, by: minInterval) {
+    print(mark)
+}
+
+//repeat-while等价于do-while
+var count = 0
+repeat {
+    print(count)
+    count += 1
+} while count < 5
+
+//switch-case 不隐式贯穿
+let anotherChar: Character = "a"
+switch anotherChar {
+case "a", "A":
+    print("the letter A.")
+default:
+    print("not the letter A.")
+}
+
+//guard-else等价if-else
+func isUpperCase(name: String?) {
+    guard let tmp = name, tmp.count > 0 else {
+        print("name is nil or empty string")
+        return
+    }
+    print("Uppercased:\(tmp.uppercased())")
+}
+
+isUpperCase(name: "")
+isUpperCase(name: "nigelli")
+isUpperCase(name: nil)
