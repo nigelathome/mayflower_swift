@@ -250,3 +250,54 @@ func isUpperCase(name: String?) {
 isUpperCase(name: "")
 isUpperCase(name: "nigelli")
 isUpperCase(name: nil)
+
+//初始化
+var arrayInt: [Int] = []
+var arrayStr: [String] = []
+var myArray = [String]()
+var myArray2 = Array<String>()
+
+let tenZero = Array(repeating: "0", count: 10)
+print(tenZero)
+
+let numbersArray = [Int](0...7)
+print(numbersArray)
+
+let personInfo = ["zhangsan": 27, "lisi": 28, "wangwu": 29]
+let namesInfo = [String](personInfo.keys)
+print(namesInfo)
+
+
+//数组遍历
+//forEach()
+numbersArray.forEach { (num) in
+    if num == 3 {
+        print(num * 10)
+    }
+}
+
+//Iterator
+var numIterator = numbersArray.makeIterator()
+while let num = numIterator.next() {
+    print(num * 10)
+}
+
+//indices
+for i in numbersArray.indices {
+    print(numbersArray[i])
+}
+
+//数组查找
+var arr2 = [10, 20, 45, 30, 98, 100, 30, 4]
+print(arr2.first!)
+print(arr2.last!)
+print(arr2.first(where: {$0 > 25})!)
+print(arr2.last(where: {$0 > 25})!)
+print(arr2.firstIndex(of: 30)!)
+print(arr2.lastIndex(of: 20)!)
+
+let maxY: Int? = arr2.max()
+print(maxY ?? 0)
+
+let minY: Int? = arr2.min()
+print(minY ?? 0)
