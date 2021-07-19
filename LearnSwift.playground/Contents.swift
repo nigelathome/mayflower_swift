@@ -1,5 +1,6 @@
 import UIKit
 
+/*
 //var str = "Hello, playground"
 //print(str)
 
@@ -301,3 +302,27 @@ print(maxY ?? 0)
 
 let minY: Int? = arr2.min()
 print(minY ?? 0)
+
+*/
+var arr = [10, 20, 45, 30, 98, 101, 30, 4]
+print(arr.allSatisfy({$0 > 10}))
+print(arr.allSatisfy({$0 >= 4}))
+
+arr.append(100)
+print(arr)
+
+var num = [Int](2...7)
+num.append(contentsOf: 100...105)
+print(num)
+
+num.insert(5, at: 3)
+num.insert(contentsOf: 10...16, at: 3)
+print(num)
+
+var chars: [Character] = ["a", "b", "c"]
+chars.insert(contentsOf: "123", at: 0)
+
+let removeChar = chars.remove(at: 1)
+print(chars)
+let firstChar = chars.removeFirst()
+print(chars)
