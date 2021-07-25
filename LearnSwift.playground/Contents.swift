@@ -398,3 +398,146 @@ do {
     print("unexpected error: \(error).")
 }
 
+//不带返回值的函数
+func greetToGuys(person: String) {
+    print("Hello, \(person)!")
+}
+
+greetToGuys(person: "Nigelli")
+
+//带返回值的函数
+func greet(person: String, alreadyGreeted: Bool) -> String {
+    if alreadyGreeted {
+        return greetAgain(person: person)
+    } else {
+        return greet(person: person)
+    }
+}
+
+func greetAgain(person: String) -> String {
+    let greeting = "Hello, " + person + "!"
+    return greeting
+}
+
+func greet(person: String) -> String {
+    let greeting = "Hello, " + person + "!"
+    return greeting
+}
+
+print(greet(person: "Nigel", alreadyGreeted: false))
+
+//tuple做函数返回值
+func minMax(array: [Int]) -> (min: Int, max: Int)? {
+    var curMin = array[0]
+    var curMax = array[0]
+    for value in array[1..<array.count] {
+        if value < curMin {
+            curMin = value
+        } else if value > curMax {
+            curMax = value
+        }
+    }
+    return (curMin, curMax)
+}
+
+if let bounds = minMax(array: [7, 10, -1, 0, 4, 6, -3, 3, 9]) {
+    print("min is \(bounds.min), max is \(bounds.max)")
+}
+
+//隐式返回的函数
+func sayHello(for person: String) -> String {
+    "Hello, " + person + "!"
+}
+
+print(sayHello(for: "RVO"))
+
+//定义函数的时候指定参数标签
+func shortIntro(person: String, from hometown: String) -> String {
+    return "This is \(person), he/she comes from \(hometown)."
+}
+
+print(shortIntro(person: "Nigel", from: "China"))
+
+//省略参数标签符号_
+func fullName(_ firstName: String, _ secondName: String) -> String {
+    return "\(firstName) \(secondName)"
+}
+
+print(fullName("Nigel", "Li"))
+
+//定义默认形参
+func showNum(_ defaultParams: Int = 3) -> String {
+    return "number is: \(defaultParams)"
+}
+
+print(showNum(9))
+print(showNum())
+
+//可变形参
+func getMeanValue(_ numbers: Double...) -> Double {
+    var total: Double = 0
+    for num in numbers {
+        total += num
+    }
+    
+    return total / Double(numbers.count)
+}
+
+getMeanValue(1, 2, 4, 6, 7, 8, 3)
+getMeanValue(-1, 6, 0, 2, -4, 6, 7, -8, 10, -13, -9)
+
+//inout类型的形参用于改变形参的值 传参使用&
+func swapRefs(_ a: inout Int, _ b: inout Int) {
+    let tmp: Int = a
+    a = b
+    b = tmp
+}
+
+var firstVal = -1
+var secondVal = 7
+print("before swapping, firstVal = \(firstVal), secondVal = \(secondVal)")
+swapRefs(&firstVal, &secondVal)
+print("after swapping, firstVal = \(firstVal), secondVal = \(secondVal)")
+
+//使用函数类型 = 函数指针
+func addTwoNum(num1: Int, num2: Int) -> Int {
+    return Int(num1 + num2)
+}
+
+var sumVar: (Int, Int) -> Int = addTwoNum
+print(sumVar(1, 1))
+
+//函数作形参
+func getMathSum(sumVal: (Int, Int) -> Int, a: Int, b: Int) {
+    print("result is : \(sumVal(a, b))")
+}
+
+getMathSum(sumVal: sumVar, a: 3, b: 7)
+
+//函数作返回类型
+func stepForward(_ input: Int) -> Int {
+    return input + 1
+}
+
+func stepBackward(_ input: Int) -> Int {
+    return input - 1
+}
+
+func moveForward(forwards: Bool) -> (Int) -> Int {
+    return forwards ? stepBackward(_:) : stepForward(_:)
+}
+
+var curVal = 3
+let getNextValFunc: (Int) -> Int = moveForward(forwards: curVal > 0)//函数定义
+
+while curVal != 0 {
+    print("curVal = \(curVal)")
+    curVal = getNextValFunc(curVal)
+}
+
+print("curVal = \(curVal)")
+
+
+
+ 
+
