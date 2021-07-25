@@ -813,3 +813,51 @@ let car = Car()
 car.curSpeed = 25.0
 car.gear = 3
 print("Car: \(car.description)")
+
+//扩展
+extension Double {
+    var km: Double { return self * 1_000.0 }
+    var m: Double { return self }
+    var cm: Double { return self / 100.0 }
+    var mm: Double { return self / 1_000.0 }
+    var ft: Double { return self / 3.28084 }
+}
+
+let oneInch = 25.4.mm
+print("One inch is \(oneInch) meters")
+let threeFeet = 3.ft
+print("Three feet is \(threeFeet) meters")
+
+extension Rect {
+    init(center: Point, left: Point, size: Size) {
+        let originX = center.x > left.x ? center.x : left.x - (size.width / 2)
+        let originY = center.y > left.y ? center.y : left.y - (size.height / 2)
+        self.init(origin: Point(x: originX, y:originY), size: size)
+    }
+}
+
+let centerRect = Rect(center: Point(x: 4.0, y: 4.0), left: Point(x: 0.0, y: 0.0), size: Size(width: 3.0, height: 3.0))
+
+//添加新方法
+extension Int {
+    func repetitions(task: () -> Void) {
+        for _ in 0..<self {
+            task()
+        }
+    }
+}
+
+7.repetitions {
+    print("New func")
+}
+
+//mutating 改变实例变量本身
+extension Int {
+    mutating func squrare() {
+        self = self * self
+    }
+}
+
+var a: Int = 9
+a.squrare()
+print(a)
