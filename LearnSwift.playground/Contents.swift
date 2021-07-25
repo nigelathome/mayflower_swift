@@ -692,5 +692,124 @@ enum Planet: Int {
     case mercury = 1, venus, earth, mars, jupiter, staturn, uranus, neptune
 }
 
+//类的初始化
+struct Fahrenheit {
+    var temperature: Double
+    init() {
+        temperature = 32.0
+    }
+    
+}
 
+var f = Fahrenheit()
+print("the default temperature is \(f.temperature)")
 
+class ShoppingListItem {
+    var name: String?
+    var quantity = 1
+    var purchased = false
+}
+
+var item = ShoppingListItem()
+
+//自定义初始化
+struct Celsius {
+    var temperature: Double
+    init(fahrenheit: Double) {
+        temperature = (fahrenheit - 32.0) / 1.8
+    }
+    
+    init(kelvin: Double) {
+        temperature = kelvin - 273.15
+    }
+}
+
+let boilingPoint = Celsius(fahrenheit: 212.0)
+let freezingPoint = Celsius(kelvin: 273.15)
+
+//常量属性
+class SurveyQuestion {
+    let text: String
+    var response: String?
+    init(text: String) {
+        self.text = text
+    }
+    
+    func ask() {
+        print(text)
+    }
+}
+
+let beets = SurveyQuestion(text: "How about beets?")
+beets.ask()
+beets.response = "u like beets."
+
+struct Size {
+    var width = 0.0, height = 0.0
+}
+let twoByTwo = Size(width: 2.0, height: 12.0)
+
+struct Point {
+    var x = 0.0, y = 0.0
+}
+
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    init() {}
+    init(origin: Point, size: Size) {
+        self.origin = origin
+        self.size = size
+    }
+    
+    init(center: Point, size: Size) {
+        let originX = center.x - (size.width / 2)
+        let originY = center.y - (size.height / 2)
+        self.init(origin: Point(x: originX, y: originY), size: size)
+    }
+}
+
+//定义基类
+class Vehicle {
+    var curSpeed = 0.0
+    var description: String {
+        return "traveling at \(curSpeed) miles per hour"
+    }
+    
+    func makeNoise() {
+        //TODO
+    }
+}
+
+//子类
+class Bicyle: Vehicle {
+    var hasBasket = false
+}
+
+let bicycle = Bicyle()
+bicycle.hasBasket = true
+bicycle.curSpeed = 15.0
+print("Bicycle: \(bicycle.description)")
+
+//重写 override
+class Train: Vehicle {
+    override func makeNoise() {
+        print("yo 123")
+    }
+}
+
+let train = Train()
+train.makeNoise()
+
+//重写 getter/setter
+class Car: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + "in gear \(gear)"
+    }
+}
+
+let car = Car()
+car.curSpeed = 25.0
+car.gear = 3
+print("Car: \(car.description)")
