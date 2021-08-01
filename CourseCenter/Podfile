@@ -1,0 +1,10 @@
+platform :ios, '13.0'
+use_frameworks!
+
+target 'CourseCenter' do
+  pod 'Kingfisher'
+  pod 'SnapKit'
+  pod 'R.swift'
+end
+
+
