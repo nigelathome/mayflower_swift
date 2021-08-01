@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Products {
+struct Product {
     var imageUrl: String
     var name: String
-    var price: Int
     var desc: String
+    var price: Int
     var teacher: String
-    var student: String
     var total: Int
     var update: Int
+    var studentCount: Int
     var detail: String
     var courseList: String
 }

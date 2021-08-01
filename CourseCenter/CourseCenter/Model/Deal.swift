@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Deal {
+    var product: Product
+    var prgress: Int
+}

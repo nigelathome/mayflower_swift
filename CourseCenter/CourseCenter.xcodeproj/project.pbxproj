@@ -33,6 +33,9 @@
 		2665A48B26B69CCB00E94058 /* icon_cal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2665A47826B69CCB00E94058 /* icon_cal@2x.png */; };
 		2665A48C26B69CCB00E94058 /* icon_pwd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2665A47926B69CCB00E94058 /* icon_pwd@2x.png */; };
 		2665A48F26B69D8600E94058 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665A48E26B69D8600E94058 /* R.generated.swift */; };
+		2665A49926B6A23B00E94058 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665A49826B6A23B00E94058 /* Product.swift */; };
+		2665A49D26B6A2DF00E94058 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665A49C26B6A2DF00E94058 /* Deal.swift */; };
+		2665A4A126B6A31E00E94058 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2665A4A026B6A31E00E94058 /* MockData.swift */; };
 		914EA2DB4AFC3055682E1718 /* Pods_CourseCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E779C414A258006018C94C9F /* Pods_CourseCenter.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		2665A47826B69CCB00E94058 /* icon_cal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_cal@2x.png"; sourceTree = "<group>"; };
 		2665A47926B69CCB00E94058 /* icon_pwd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pwd@2x.png"; sourceTree = "<group>"; };
 		2665A48E26B69D8600E94058 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		2665A49826B6A23B00E94058 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2665A49C26B6A2DF00E94058 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		2665A4A026B6A31E00E94058 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		925465FF018C2294F8096002 /* Pods-CourseCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseCenter.release.xcconfig"; path = "Target Support Files/Pods-CourseCenter/Pods-CourseCenter.release.xcconfig"; sourceTree = "<group>"; };
 		E779C414A258006018C94C9F /* Pods_CourseCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D552BB921A239F25A31546 /* Pods-CourseCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseCenter.debug.xcconfig"; path = "Target Support Files/Pods-CourseCenter/Pods-CourseCenter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 		261CF66E26B6895C004B1450 /* CourseCenter */ = {
 			isa = PBXGroup;
 			children = (
+				2665A49726B6A22300E94058 /* Model */,
 				2665A48E26B69D8600E94058 /* R.generated.swift */,
 				2665A46626B69C7D00E94058 /* Resource */,
 				261CF66F26B6895C004B1450 /* AppDelegate.swift */,
@@ -148,6 +155,16 @@
 				2665A46B26B69CCB00E94058 /* student@2x.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		2665A49726B6A22300E94058 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2665A49826B6A23B00E94058 /* Product.swift */,
+				2665A49C26B6A2DF00E94058 /* Deal.swift */,
+				2665A4A026B6A31E00E94058 /* MockData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7FA583B3F96B5725E77C7706 /* Pods */ = {
@@ -314,8 +331,11 @@
 			files = (
 				261CF67426B6895C004B1450 /* ViewController.swift in Sources */,
 				261CF67026B6895C004B1450 /* AppDelegate.swift in Sources */,
+				2665A49926B6A23B00E94058 /* Product.swift in Sources */,
+				2665A49D26B6A2DF00E94058 /* Deal.swift in Sources */,
 				261CF67226B6895C004B1450 /* SceneDelegate.swift in Sources */,
 				2665A48F26B69D8600E94058 /* R.generated.swift in Sources */,
+				2665A4A126B6A31E00E94058 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
