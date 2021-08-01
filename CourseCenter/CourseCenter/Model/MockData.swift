@@ -1,5 +1,5 @@
 //
-//  FakeData.swift
+//  MockData.swift
 //  CourseCenter
 //
 //  Created by nigelli on 2021/8/1.
