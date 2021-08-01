@@ -60,7 +60,7 @@ class LoginViewController: BaseViewController, ValidatePhoneNumber, ValidatePass
         phoneTextField.textColor = UIColor.hexColor(0x333333)
         phoneTextField.layer.cornerRadius = 5
         phoneTextField.layer.masksToBounds = true
-        passwordTextField.placeholder = "pls input No."
+        phoneTextField.placeholder = "pls input No."
         view.addSubview(phoneTextField)
         phoneTextField.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
