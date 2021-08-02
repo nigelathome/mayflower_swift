@@ -78,6 +78,7 @@ class LoginViewController: BaseViewController, ValidatePhoneNumber, ValidatePass
         passwordTextField.layer.cornerRadius = 5
         passwordTextField.layer.masksToBounds = true
         passwordTextField.placeholder = "pls input pwd"
+        passwordTextField.isSecureTextEntry = true
         view.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
@@ -90,7 +91,9 @@ class LoginViewController: BaseViewController, ValidatePhoneNumber, ValidatePass
         loginButton.setTitle("Login", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
-        loginButton.backgroundColor = UIColor.hexColor(0xf8892e)
+        loginButton.setBackgroundImage( UIColor.hexColor(0xf8892e).toImage(), for: .normal)
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.masksToBounds = true
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
