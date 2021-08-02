@@ -897,3 +897,65 @@ sam.age
 sam.age = 33
 print(sam.age)
 
+var letters = Set<Character>()
+letters.insert("N")
+print(letters)
+
+//set元素唯一
+var courses: Set<String> = ["English", "Computer", "Math"]
+courses.insert("Computer")
+print(courses)
+
+//顺序变量set中元素
+for cs in courses {
+    print(cs)
+}
+
+if !courses.isEmpty {
+    print(courses.count)
+}
+
+//顺序遍历
+for cs in courses.sorted() {
+    print(cs)
+}
+
+//结构体/类作为set元素 需要实现hash协议
+struct Man {
+    var name: String
+    var age: Int
+}
+
+extension Man: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(age)
+    }
+}
+
+//定义集合中相等的元素
+extension Man: Equatable {
+    static func == (lo: Man, ro: Man) -> Bool {
+        return lo.name == ro.name
+    }
+}
+
+var manSet = Set<Man>()
+manSet.insert(Man(name: "Frank", age: 34))
+
+//update
+manSet.update(with: Man(name: "Frank", age: 45))
+manSet.update(with: Man(name: "Fisher", age: 50))
+print(manSet)
+print(manSet.count)
+
+//remove
+manSet.remove(Man(name: "Frank", age: 45))
+
+//子集和超集
+let ASet: Set = [1, 2, 3]
+let BSet: Set = [1, 2, 3, 4, 5]
+print(ASet.isSubset(of: BSet))
+print(BSet.isSuperset(of: ASet))
+print(ASet.isStrictSubset(of: BSet))
+print(BSet.isStrictSuperset(of: ASet))
