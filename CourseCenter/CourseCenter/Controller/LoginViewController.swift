@@ -55,7 +55,8 @@ class LoginViewController: BaseViewController, ValidatePhoneNumber, ValidatePass
         let phoneIconView = UIImageView(image: R.image.icon_phone())
         phoneTextField = UITextField()
         phoneTextField.leftView = phoneIconView
-        phoneIconView.layer.borderColor = UIColor.hexColor(0x333333).cgColor
+        phoneTextField.leftViewMode = .always
+        phoneTextField.layer.borderColor = UIColor.hexColor(0x333333).cgColor
         phoneTextField.layer.borderWidth = 1
         phoneTextField.textColor = UIColor.hexColor(0x333333)
         phoneTextField.layer.cornerRadius = 5
@@ -72,7 +73,8 @@ class LoginViewController: BaseViewController, ValidatePhoneNumber, ValidatePass
         let passwordIconView = UIImageView(image: R.image.icon_pwd())
         passwordTextField = UITextField()
         passwordTextField.leftView = passwordIconView
-        phoneIconView.layer.borderColor = UIColor.hexColor(0x333333).cgColor
+        passwordTextField.leftViewMode = .always
+        passwordTextField.layer.borderColor = UIColor.hexColor(0x333333).cgColor
         passwordTextField.layer.borderWidth = 1
         passwordTextField.textColor = UIColor.hexColor(0x333333)
         passwordTextField.layer.cornerRadius = 5
