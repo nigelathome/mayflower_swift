@@ -7,21 +7,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let entry = UIButton(type: .custom)
-        entry.setTitle("click", for: .normal)
-        entry.setTitleColor(.blue, for: .normal)
-        entry.addTarget(self, action: #selector(didClickEntryButton), for: .touchUpInside)
-        view.addSubview(entry)
-        entry.snp.makeConstraints { (make) in
-            make.left.top.equalTo(100)
-            make.width.equalTo(100)
-            make.height.equalTo(50)
-        }
+        let homeViewController = HomeViewController()
+        homeViewController.tabBarItem.image = R.image.home()
+        homeViewController.tabBarItem.selectedImage = R.image.home_selected()
+        homeViewController.tabBarItem.title = "home"
+        
+        let navigationHomeViewController = UINavigationController(rootViewController: homeViewController)
+        self.addChild(navigationHomeViewController)
+        
+        let mineViewController = MineViewController()
+        mineViewController.tabBarItem.image = R.image.mine()
+        mineViewController.tabBarItem.selectedImage = R.image.mine_selected()
+        mineViewController.tabBarItem.title = "mine"
+        
+        let navigationMineViewController = UINavigationController(rootViewController: mineViewController)
+        self.addChild(navigationMineViewController)
+       
     }
 
     @objc func didClickEntryButton() {
