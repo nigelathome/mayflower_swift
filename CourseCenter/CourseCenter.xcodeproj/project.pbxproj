@@ -41,6 +41,7 @@
 		26B7A59426B6B4F700B4836E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7A59326B6B4F700B4836E /* UIColorExtension.swift */; };
 		26B7A59726B6D27C00B4836E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7A59626B6D27C00B4836E /* BaseViewController.swift */; };
 		26B7A59B26B6D38A00B4836E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7A59A26B6D38A00B4836E /* LoginViewController.swift */; };
+		26BB109D26B8EB15005447CC /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BB109C26B8EB15005447CC /* BannerView.swift */; };
 		914EA2DB4AFC3055682E1718 /* Pods_CourseCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E779C414A258006018C94C9F /* Pods_CourseCenter.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		26B7A59326B6B4F700B4836E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		26B7A59626B6D27C00B4836E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		26B7A59A26B6D38A00B4836E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		26BB109C26B8EB15005447CC /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		925465FF018C2294F8096002 /* Pods-CourseCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseCenter.release.xcconfig"; path = "Target Support Files/Pods-CourseCenter/Pods-CourseCenter.release.xcconfig"; sourceTree = "<group>"; };
 		E779C414A258006018C94C9F /* Pods_CourseCenter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseCenter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D552BB921A239F25A31546 /* Pods-CourseCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseCenter.debug.xcconfig"; path = "Target Support Files/Pods-CourseCenter/Pods-CourseCenter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		261CF66E26B6895C004B1450 /* CourseCenter */ = {
 			isa = PBXGroup;
 			children = (
+				26BB109B26B8EAF3005447CC /* View */,
 				26B7A59926B6D36900B4836E /* Controller */,
 				26B7A59226B6B41C00B4836E /* Extension */,
 				2665A49726B6A22300E94058 /* Model */,
@@ -196,6 +199,14 @@
 				26209D0226B8E0A200B76F96 /* MineViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		26BB109B26B8EAF3005447CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26BB109C26B8EB15005447CC /* BannerView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7FA583B3F96B5725E77C7706 /* Pods */ = {
@@ -371,6 +382,7 @@
 				2665A48F26B69D8600E94058 /* R.generated.swift in Sources */,
 				26B7A59B26B6D38A00B4836E /* LoginViewController.swift in Sources */,
 				26209D0326B8E0A200B76F96 /* MineViewController.swift in Sources */,
+				26BB109D26B8EB15005447CC /* BannerView.swift in Sources */,
 				2665A4A126B6A31E00E94058 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
