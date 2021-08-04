@@ -40,7 +40,7 @@ class MockData {
     static func createDeals() -> [Deal] {
         if deals.count == 0 {
             deals = MockData.createProducts().map {
-                Deal(product: $0, prgress: 1)
+                Deal(product: $0, progress: 1)
             }
         }
         

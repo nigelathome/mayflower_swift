@@ -8,8 +8,8 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: BaseViewController, BannerViewDataSource {
-
+class HomeViewController: BaseViewController, BannerViewDataSource, CommonListDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +17,15 @@ class HomeViewController: BaseViewController, BannerViewDataSource {
         bannerView.scrollInterval = 3
         bannerView.dataSource = self
         view.addSubview(bannerView)
+        
+        let productList = CommonList<Product, ProductCell>(frame: .zero)
+        productList.items = MockData.createProducts()
+        productList.delegate = self
+        view.addSubview(productList)
+        productList.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(bannerView.snp.bottom).offset(5)
+        }
     }
     
     //实现BannerViewDataSource协议方法
@@ -34,6 +43,14 @@ class HomeViewController: BaseViewController, BannerViewDataSource {
             imageView.clipsToBounds = true
             imageView.kf.setImage(with: URL(string: MockData.createBanners()[index]))
             return imageView
+        }
+    }
+    
+    func didSelectItem<Item>(_ item: Item) {
+        if item is Product {
+            let detailViewController = DetailViewController()
+            
+            navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
     
