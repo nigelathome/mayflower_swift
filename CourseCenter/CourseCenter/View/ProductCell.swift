@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol ProductListDelegate {
+    func didSelectProduct(product: Product)
+}
+
 class ProductCell: CommonListCell<Product> {
     
     let priceLabel: UILabel
@@ -51,7 +55,7 @@ class ProductCell: CommonListCell<Product> {
            })
            
            textLabel?.snp.makeConstraints({ (make) in
-               make.left.equalTo(productImageView.snp_right).offset(12)
+            make.left.equalTo(productImageView.snp.right).offset(12)
                make.top.equalTo(productImageView)
                make.right.equalTo(contentView).offset(-20)
            })
