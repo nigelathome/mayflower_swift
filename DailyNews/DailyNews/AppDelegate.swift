@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc1.tabBarItem.title = "home"
         vc1.tabBarItem.image = UIImage(named: "icon.bundle/home@2x.png")
         vc1.tabBarItem.selectedImage = UIImage(named: "icon.bundle/home_selected@2x.png")
-        vc1.view.backgroundColor = UIColor.red
+        vc1.view.backgroundColor = UIColor.white
         let navigationCtl: UINavigationController = UINavigationController(rootViewController: vc1)
         
         let vc2 = UIViewController()
