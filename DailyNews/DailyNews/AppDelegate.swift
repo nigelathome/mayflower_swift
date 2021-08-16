@@ -21,11 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc1.view.backgroundColor = UIColor.white
         let navigationCtl: UINavigationController = UINavigationController(rootViewController: vc1)
         
-        let vc2 = UIViewController()
-        vc2.tabBarItem.title = "video"
-        vc2.tabBarItem.image = UIImage(named: "icon.bundle/video@2x.png")
-        vc2.tabBarItem.selectedImage = UIImage(named: "icon.bundle/video_selected@2x.png")
-        vc2.view.backgroundColor = UIColor.orange
+        let vc2 = GTVideoViewController()
         
         let vc3 = UIViewController()
         vc3.tabBarItem.title = "like"
