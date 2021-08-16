@@ -23,9 +23,65 @@ class GTVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell_1")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell_2")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell_3")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        view.addSubview(collectionView)
     }
     
 
+}
+
+extension GTVideoViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 120
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: UICollectionViewCell
+        if indexPath.item % 3 == 0 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_1", for: indexPath)
+            cell.backgroundColor = UIColor.green
+        } else if indexPath.item % 3 == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_2", for: indexPath)
+            cell.backgroundColor = UIColor.red
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_3", for: indexPath)
+            cell.backgroundColor = UIColor.blue
+        }
+        return cell
+    }
+}
+
+extension GTVideoViewController: UICollectionViewDelegate {
+    
+}
+
+extension GTVideoViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.item % 3 == 0 {
+            return CGSize(width: (view.frame.size.width - 10) / 2, height: 70)
+        } else if indexPath.item % 3 == 1 {
+            return CGSize(width: (view.frame.size.width - 10) / 2, height: 100)
+        } else {
+            return CGSize(width: view.frame.size.width, height: 130)
+        }
+        
+    }
 }
