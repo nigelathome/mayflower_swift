@@ -13,6 +13,7 @@
 		26B1FA0626CA4292000A40C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B1FA0426CA4292000A40C6 /* Main.storyboard */; };
 		26B1FA0826CA4295000A40C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26B1FA0726CA4295000A40C6 /* Assets.xcassets */; };
 		26B1FA0B26CA4295000A40C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26B1FA0926CA4295000A40C6 /* LaunchScreen.storyboard */; };
+		26B1FA2926CA474F000A40C6 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 26B1FA2826CA474F000A40C6 /* icon.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		26B1FA0726CA4295000A40C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26B1FA0A26CA4295000A40C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26B1FA0C26CA4295000A40C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26B1FA2826CA474F000A40C6 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		26B1F9FD26CA4292000A40C6 /* DailyNews */ = {
 			isa = PBXGroup;
 			children = (
+				26B1FA2826CA474F000A40C6 /* icon.bundle */,
 				26B1F9FE26CA4292000A40C6 /* AppDelegate.swift */,
 				26B1FA0026CA4292000A40C6 /* SceneDelegate.swift */,
 				26B1FA0226CA4292000A40C6 /* ViewController.swift */,
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B1FA2926CA474F000A40C6 /* icon.bundle in Resources */,
 				26B1FA0B26CA4295000A40C6 /* LaunchScreen.storyboard in Resources */,
 				26B1FA0826CA4295000A40C6 /* Assets.xcassets in Resources */,
 				26B1FA0626CA4292000A40C6 /* Main.storyboard in Resources */,
