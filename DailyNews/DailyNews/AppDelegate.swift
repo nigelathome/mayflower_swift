@@ -40,12 +40,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController: UITabBarController = UITabBarController()
         tabBarController.viewControllers = [vc1, vc2, vc3, vc4]
+        tabBarController.delegate = self
 
         _window = UIWindow()
         _window?.rootViewController = tabBarController
         _window?.makeKeyAndVisible()
         
         return true
+    }
+
+}
+
+extension AppDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("did select tab bar item!")
     }
 
 }
