@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.cyan
+        let label: UILabel = UILabel(frame: .zero)
+        label.text = "Hello, Swift World!"
+        label.sizeToFit()
+        label.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
+        view.addSubview(label)
     }
 
 

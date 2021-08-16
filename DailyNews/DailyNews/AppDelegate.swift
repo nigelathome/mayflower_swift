@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
                 
-        let vc1 = UIViewController()
+        let vc1 = ViewController()
         vc1.tabBarItem.title = "home"
         vc1.tabBarItem.image = UIImage(named: "icon.bundle/home@2x.png")
         vc1.tabBarItem.selectedImage = UIImage(named: "icon.bundle/home_selected@2x.png")
