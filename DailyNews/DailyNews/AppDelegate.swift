@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc1.tabBarItem.image = UIImage(named: "icon.bundle/home@2x.png")
         vc1.tabBarItem.selectedImage = UIImage(named: "icon.bundle/home_selected@2x.png")
         vc1.view.backgroundColor = UIColor.red
+        let navigationCtl: UINavigationController = UINavigationController(rootViewController: vc1)
         
         let vc2 = UIViewController()
         vc2.tabBarItem.title = "video"
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc4.view.backgroundColor = UIColor.green
         
         let tabBarController: UITabBarController = UITabBarController()
-        tabBarController.viewControllers = [vc1, vc2, vc3, vc4]
+        tabBarController.viewControllers = [navigationCtl, vc2, vc3, vc4]
         tabBarController.delegate = self
 
         _window = UIWindow()

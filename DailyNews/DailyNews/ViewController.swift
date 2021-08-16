@@ -39,6 +39,9 @@ class ViewController: UIViewController {
         let myView: MyView = MyView(frame: CGRect(x: 150, y: 200, width: 80, height:30))
         myView.backgroundColor = UIColor.cyan
         view.addSubview(myView)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pushViewController(_:)))
+        myView.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +58,18 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    @objc func pushViewController(_ sender: AnyObject) {
+        guard sender.isKind(of: UITapGestureRecognizer.self) else {
+            return
+        }
+        
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.white
+        vc.navigationItem.title = "二级页面"
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "右侧按钮", style: .plain, target: self, action: nil)
+        navigationController?.pushViewController(vc, animated: true)        
     }
     
 }
