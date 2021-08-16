@@ -7,6 +7,24 @@
 
 import UIKit
 
+class MyView: UIView {
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+    }
+
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+    }
+    
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+    }
+    
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,6 +35,10 @@ class ViewController: UIViewController {
         label.sizeToFit()
         label.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
         view.addSubview(label)
+        
+        let myView: MyView = MyView(frame: CGRect(x: 150, y: 200, width: 80, height:30))
+        myView.backgroundColor = UIColor.cyan
+        view.addSubview(myView)
     }
 
 
