@@ -78,3 +78,24 @@ print(revName4)
 var revName5 = names.sorted(by: >)
 print(revName5)
 
+//闭包捕获值
+//捕获total
+func makeIncrementer(forIncrementer amount: Int) -> () -> Int {
+    var total = 0
+    func incrementer() -> Int {
+        total += amount
+        return total
+    }
+    return incrementer
+}
+
+let incrementerByTen: () -> Int = makeIncrementer(forIncrementer: 10)
+incrementerByTen()
+incrementerByTen()
+incrementerByTen()
+
+let incrementerByThree: () -> Int = makeIncrementer(forIncrementer: 3)
+incrementerByThree()
+incrementerByThree()
+incrementerByThree()
+
